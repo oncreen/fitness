@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viweport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="onscreenfitness.css">
+    <title>onscreenfitness</title>
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <div class="header">
+                <div class="header-logo">
+                    <a href="#"> <img class="img-logo" src="Assets/images/PicsArt_06-09-09.20.06.png" alt="fitnesslogo" height="78" width="99"></a>
+                    <span class="img-log-text">ONSCREEN FITNESS</span>
+                    <a href="https://chat.whatsapp.com/EsBKQX9LdufC2xdJT0CwUR" class="join" target="_blank"><span>JOIN NOW</span></a>
+                </div>
+            </div>
+        </header>
+        <p class="pome">If you are beautiful , it's god gift to you . But If you live your life beautifully it's your gift to god</p>
+            <p class="info"> we are provide the best fitness advice</p>
+            <!--image section-->
+            <div class="imgs">
+            <img class="iimg" src="Assets/images/WhatsApp Image 2020-06-12 at 2.01.04 PM.jpeg"/>
+            <img class="iiimg" src="assets/images/On-Demand-Training.jpg"/>
+        </div>
+            <!--bmi calc-->
+    </br><div class="bmi"style="border:1px solid #000;object-fit: contain;max-width: 100%;max-height: fit-content;object-fit: contain;">
+   <script type="text/javascript">
+    function computeBMI()
+    {
+        //Obtain user inputs
+        var height=Number(document.getElementById("height").value);
+        var heightunits=document.getElementById("heightunits").value;
+        var weight=Number(document.getElementById("weight").value);
+        var weightunits=document.getElementById("weightunits").value;
+
+
+        //Convert all units to metric
+        if (heightunits=="inches") height/=39.3700787;
+        if (weightunits=="lb") weight/=2.20462;
+
+        //Perform calculation
+        var BMI=weight/Math.pow(height,2);
+
+        //Display result of calculation
+        document.getElementById("output").innerText=Math.round(BMI*100)/100;
+
+        var output =  Math.round(BMI*100)/100
+        if (output<18.5)
+        document.getElementById("comment").innerText = "Underweight";
+      else   if (output>=18.5 && output<=25)
+        document.getElementById("comment").innerText = "Normal";
+     else   if (output>=25 && output<=30)
+        document.getElementById("comment").innerText = "Obese";
+     else   if (output>30)
+        document.getElementById("comment").innerText = "Overweight";
+       // document.getElementById("answer").value = output; 
+    }
+</script>
+ </head>
+ <body>
+<h1>Body Mass Index Calculator</h1>
+<p>Enter your height: <input type="text" id="height"/>
+    <select type="multiple" id="heightunits">
+        <option value="metres" selected="selected">metres</option>
+        <option value="inches">inches</option>
+    </select>
+     </p>
+<p>Enter your weight: <input type="text" id="weight"/>
+    <select type="multiple" id="weightunits">
+        <option value="kg" selected="selected">kilograms</option>
+        <option value="lb">pounds</option>
+    </select>
+</p>
+<input type="submit" value="computeBMI" onclick="computeBMI();">
+<h1>Your BMI is: <span id="output">?</span></h1>
+
+<h2>This means you are: <span id="comment"> ?</span> </h2>
+</div>
+<!--bmi end-->
+<!--img2--><div class="limg">
+<img class="iiiimg" src="assets/images/c700x420.jpg"/>
+            <img class="iiiiimg" src="Assets/images/images.jpg"/>
+        </div>
+   <footer>
+        <!--feedback-->
+        <div class="footer">
+        <a href="mailto:onscreenfitness@gmailcom"><img class="feedback" src="assets/images/feedback-rating-satisfaction-customer-review-512.png"/></a>
+        <div class="ft"><span>Feedback</span></div>
+    </div>
+        </footer>
+</body>
+
+</html>
